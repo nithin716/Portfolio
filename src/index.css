@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm portfolio color palette */
+    --background: 28 65% 97%; /* #FEFAF6 */
+    --foreground: 215 100% 17%; /* #102C57 */
+    --card: 28 35% 87%; /* #EADBC8 */
+    --card-foreground: 215 100% 17%; /* #102C57 */
+    --popover: 28 65% 97%; /* #FEFAF6 */
+    --popover-foreground: 215 100% 17%; /* #102C57 */
+    --primary: 215 100% 17%; /* #102C57 */
+    --primary-foreground: 28 65% 97%; /* #FEFAF6 */
+    --secondary: 31 41% 74%; /* #DAC0A3 */
+    --secondary-foreground: 215 100% 17%; /* #102C57 */
+    --muted: 31 41% 74%; /* #DAC0A3 */
+    --muted-foreground: 215 50% 35%; /* Darker version of primary for muted text */
+    --accent: 28 35% 87%; /* #EADBC8 */
+    --accent-foreground: 215 100% 17%; /* #102C57 */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 28 65% 97%;
+    --border: 31 41% 74%; /* #DAC0A3 */
+    --input: 28 35% 87%; /* #EADBC8 */
+    --ring: 215 100% 17%; /* #102C57 */
+    --radius: 0.75rem;
+
+    /* Custom gradient backgrounds */
+    --gradient-primary: linear-gradient(135deg, hsl(215, 100%, 17%) 0%, hsl(31, 41%, 74%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(28, 35%, 87%) 0%, hsl(31, 41%, 74%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(28, 35%, 87%) 0%, hsl(31, 41%, 74%) 100%);
+    
+    /* Soft shadow effects */
+    --glow-primary: 0 8px 32px hsl(215, 100%, 17%, 0.15);
+    --glow-accent: 0 8px 32px hsl(31, 41%, 74%, 0.25);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar */
+    --sidebar-background: 28 65% 97%;
+    --sidebar-foreground: 215 100% 17%;
+    --sidebar-primary: 215 100% 17%;
+    --sidebar-primary-foreground: 28 65% 97%;
+    --sidebar-accent: 28 35% 87%;
+    --sidebar-accent-foreground: 215 100% 17%;
+    --sidebar-border: 31 41% 74%;
+    --sidebar-ring: 215 100% 17%;
+  }
+
+  .dark {
+    --background: 215 100% 17%; /* #102C57 */
+    --foreground: 28 65% 97%; /* #FEFAF6 */
+    --card: 215 50% 25%;
+    --card-foreground: 28 65% 97%;
+    --popover: 215 50% 25%;
+    --popover-foreground: 28 65% 97%;
+    --primary: 28 65% 97%; /* #FEFAF6 */
+    --primary-foreground: 215 100% 17%; /* #102C57 */
+    --secondary: 31 41% 74%; /* #DAC0A3 */
+    --secondary-foreground: 215 100% 17%;
+    --muted: 31 41% 74%;
+    --muted-foreground: 215 100% 17%;
+    --accent: 28 35% 87%; /* #EADBC8 */
+    --accent-foreground: 215 100% 17%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 28 65% 97%;
+    --border: 31 41% 74%;
+    --input: 215 50% 25%;
+    --ring: 28 65% 97%;
+
+    /* Sidebar */
+    --sidebar-background: 215 100% 17%;
+    --sidebar-foreground: 28 65% 97%;
+    --sidebar-primary: 28 65% 97%;
+    --sidebar-primary-foreground: 215 100% 17%;
+    --sidebar-accent: 215 50% 25%;
+    --sidebar-accent-foreground: 28 65% 97%;
+    --sidebar-border: 31 41% 74%;
+    --sidebar-ring: 28 65% 97%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+}
+
+@layer components {
+  .warm-card {
+    @apply bg-card border border-border shadow-lg;
+    box-shadow: var(--glow-accent);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .soft-shadow {
+    box-shadow: var(--glow-primary);
+  }
+
+  .soft-shadow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .section-padding {
+    @apply px-4 md:px-8 lg:px-16 xl:px-24;
+  }
+}
