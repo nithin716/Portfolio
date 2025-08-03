@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import ProfileImg from '../assets/profile3.jpg';
 
 export const HeroSection = () => {
   const { ref, inView } = useInView({
@@ -87,7 +88,8 @@ const handleResumeDownload = () => {
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                     <span className="text-3xl">📸</span>
                   </div>
-                  <img src="/Public/Images/profile3.jpg" alt="" />
+            <img src={ProfileImg} alt="Profile" />
+
                 </div>
               </div>
             </div>
