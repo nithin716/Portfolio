@@ -11,7 +11,7 @@ export const HeroSection = () => {
 
 const handleResumeDownload = () => {
   const link = document.createElement('a');
-  link.href = '/Resume.pdf'; // This works because it's in the public folder
+  link.href = '/Nithin.pdf'; // This works because it's in the public folder
   link.download = 'Nithin_Resume.pdf'; // Optional: rename on download
   document.body.appendChild(link);
   link.click();
